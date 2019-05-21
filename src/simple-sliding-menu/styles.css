@@ -1,0 +1,105 @@
+.menu--toggle {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 999;
+	height: 28px;
+	width: 28px;
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.menu--toggle span,
+.menu--toggle span::before,
+.menu--toggle span::after {
+	position: absolute;
+	content: '';
+	width: 28px;
+	height: 2.5px;
+	background: #fff;
+	border-radius: 20px;
+	transition: 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu--toggle span::before {
+	top: -8px;
+}
+
+.menu--toggle span::after {
+	top: 8px;
+}
+
+.menu--toggle.active > span {
+	background: transparent;
+}
+
+.menu--toggle.active > span::before, .menu--toggle.active > span::after {
+	background: #fff;
+	top: 0px;
+}
+.menu--toggle.active > span::before {
+	-webkit-transform: rotate(-225deg);
+	transform: rotate(-225deg);
+}
+
+.menu--toggle.active > span::after {
+	-webkit-transform: rotate(225deg);
+	transform: rotate(225deg);
+}
+
+.menu {
+	position: absolute;
+	left: -30%;
+	z-index: 998;
+	color: #fff;
+	background: rgba(250, 250, 250, 0.7);
+	-webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+	width: 30%;
+	height: 100%;
+	padding: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: 1s left cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media only screen and (max-width: 600px) {
+	.menu {
+		width: 250px;
+		left: -250px;
+		padding: 50px;
+	}
+}
+
+.menu.active {
+	left: 0;
+}
+
+.menu p {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
+}
+
+.menu > a {
+	text-decoration: none;
+	color: #000;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(280deg, #acabac 0%, #3b2fac 50%, #0b82d7 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

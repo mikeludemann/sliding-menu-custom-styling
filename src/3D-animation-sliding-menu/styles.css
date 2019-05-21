@@ -1,0 +1,232 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+	font-size: 2.441rem;
+}
+
+a {
+	color: #f2f2f2;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+header {
+	height: 80px;
+	left: 0;
+	padding: 0.5rem;
+	position: fixed;
+	text-align: right;
+	top: 0;
+	transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	transition: transform 0.6s, -webkit-transform 0.6s;
+	width: 100%;
+	z-index: 500;
+}
+
+main {
+	background-color: #eee;
+	height: 100vh;
+	padding-top: 80px;
+	-webkit-transform-origin: left center;
+	transform-origin: left center;
+	transition: -webkit-transform 0.6s 50ms;
+	transition: transform 0.6s 50ms;
+	transition: transform 0.6s 50ms, -webkit-transform 0.6s 50ms;
+}
+
+.container {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.navi--button {
+	text-transform: uppercase;
+}
+
+.navi--wrapper {
+	background-color: rgba(0,0,0,0.7);
+	box-shadow: -1px 0px 3px 0px rgba(0, 0, 0, 0.75);
+	height: 100%;
+	padding-top: 80px;
+	-webkit-perspective: 1000px;
+  perspective: 1000px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	transition: visibility 0.6s, -webkit-transform 0.6s;
+	transition: transform 0.6s, visibility 0.6s;
+	transition: transform 0.6s, visibility 0.6s, -webkit-transform 0.6s;
+	visibility: hidden;
+	width: 25vw;
+}
+
+.navi--visible .navi--wrapper {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	visibility: visible;
+}
+
+.navi {
+	position: relative;
+	-webkit-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+	-webkit-transform-origin: left center;
+	transform-origin: left center;
+	transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	transition: transform 0.6s, -webkit-transform 0.6s;
+}
+.navi--visible .navi {
+	-webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navi li.active a {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.navi a {
+	display: block;
+	line-height: 1.4;
+	padding: 0.7em 0.5em 0.7em 1.4em;
+	text-transform: uppercase;
+}
+
+.navi a:focus, .navi a:hover {
+	background-color: rgba(0,0,0,0.6);
+	text-decoration: none;
+}
+
+.navi--marker {
+	background-color: currentColor;
+	height: 2.8rem;
+	position: absolute;
+	right: 0;
+	top: 80px;
+	width: 3px;
+}
+
+.navi--marker:before {
+	border: 5px solid transparent;
+	border-right-color: inherit;
+	content: "";
+	height: 0;
+	position: absolute;
+	right: 3px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 0;
+}
+
+.active--color {
+	color: #14ff76;
+}
+
+.button--line{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	padding: 1rem 0.5rem;
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lines {
+	background: #fff;
+	border-radius: 0.2rem;
+	display: inline-block;
+	height: 0.2rem;
+	width: 2rem;
+	position: relative;
+}
+
+.lines:hover {
+	background: #ccc;
+}
+
+.lines:after, .lines:before {
+	background: #fff;
+	border-radius: 0.2rem;
+	display: inline-block;
+	height: 0.2rem;
+	width: 2rem;
+	content: "";
+	left: 0;
+	position: absolute;
+}
+
+.lines:after:hover, .lines:before:hover {
+	background: #ccc;
+}
+
+.lines:after {
+	top: 0.5rem;
+}
+
+.lines:before {
+	top: -0.5rem;
+}
+
+.button--line--x .lines {
+	transition: background .3s ease;
+}
+
+.button--line--x .lines:after, .button--line--x .lines:before {
+	-webkit-transform-origin: 50% 50% 0;
+	transform-origin: 50% 50% 0;
+	transition: top .3s .4s ease, -webkit-transform .3s ease;
+	transition: top .3s .4s ease, transform .3s ease;
+	transition: top .3s .4s ease, transform .3s ease, -webkit-transform .3s ease;
+}
+
+.navi--visible .button--line--x .lines {
+	background: transparent;
+}
+
+.navi--visible .button--line--x .lines:after, .navi--visible .button--line--x .lines:before {
+	top: 0;
+	transition: top .3s ease, -webkit-transform .3s .3s ease;
+	transition: top .3s ease, transform .3s .3s ease;
+	transition: top .3s ease, transform .3s .3s ease, -webkit-transform .3s .3s ease;
+}
+
+.navi--visible .button--line--x .lines:after {
+	-webkit-transform: rotate3d(0, 0, 1, 45deg);
+	transform: rotate3d(0, 0, 1, 45deg);
+}
+
+.navi--visible .button--line--x .lines:before {
+	-webkit-transform: rotate3d(0, 0, 1, -45deg);
+	transform: rotate3d(0, 0, 1, -45deg);
+}
+
